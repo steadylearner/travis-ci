@@ -1,7 +1,15 @@
 # https://docs.travis-ci.com/user/languages/javascript-with-nodejs
+# Improve it with database, 
+# https://docs.travis-ci.com/user/docker/ 
+# https://dev.to/nedsoft/ci-cd-with-travisci-and-coveralls-in-node-express-api-2i55
+# and AWS later.
+
 language: node_js
 node_js: 
   - "stable"
 install: yarn
 cache: yarn
 script: yarn test
+
+# Logout, login again and sync when you find this error.
+# An error happened when we tried to alter settings on GitHub. It may be caused by API restrictions, please review and add your authorized Orgs
