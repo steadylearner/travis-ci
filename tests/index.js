@@ -1,7 +1,7 @@
 // https://github.com/steadylearner/JavaScript-Full-Stack/blob/master/Express/src/test/index.js
 // https://www.google.com/search?client=firefox-b-d&q=jest+with+supertest+example
 
-// If files becomes larget, consider using jest instead
+// If files becomes larger, consider using jest instead
 
 const test = require("tape");
 const supertest = require("supertest");
@@ -10,13 +10,12 @@ const app = require("../server");
 const request = supertest(app);
 
 const assert = require('assert');
-
 const chalk = require("chalk");
 
 // Functional Test(End to End) here because what we want to verify is request and response only
-// This is faster than jest
+// This is faster than Jest
 
-test("GET /hello with promise", done => {
+test("[GET] /hello with promise", done => {
 	request
 		.get('/hello')
 		.expect(200)
@@ -25,7 +24,7 @@ test("GET /hello with promise", done => {
 			const msg = blue("Should return 200 OK with 'hello'");
 
 			try {
-				assert.strictEqul(response.text, "hello");
+				assert.strictEqual(response.text, "hello");
 			} catch (e) {
 				console.log(e);
 				done.fail(msg);
@@ -36,7 +35,7 @@ test("GET /hello with promise", done => {
 		});
 });
 
-test("GET /hello with async", async done => {
+test("[GET] /hello with async", async done => {
 
 	const blue = chalk.blue;
 	const msg = blue("Should return 200 OK with 'hello'");
@@ -45,7 +44,7 @@ test("GET /hello with async", async done => {
 		const req = await request
 			.get('/hello')
 			.expect(200);
-		assert.strictEqul(req.text, "hello");
+		assert.strictEqual(req.text, "hello");
 	} catch(e) {
 		console.log(e);
 		done.fail(msg);

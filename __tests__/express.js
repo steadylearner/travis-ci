@@ -20,7 +20,7 @@ const supertest = require('supertest');
 const request = supertest(app);
 
 describe("Test express with jest and supertest", () => {
-	test("GET /hello ", async done => {
+	test("[GET] /hello ", async done => {
 		const response = await request
 			.get('/hello');
 
